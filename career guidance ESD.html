@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidance for Career Path</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .section-container {
+            transition: all 0.5s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .section-container.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .input-field {
+            @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition duration-300 ease-in-out;
+        }
+        .btn-secondary {
+            @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 transition duration-300 ease-in-out;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl text-center mb-10">
+        <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+            Guidance for Career Path
+        </h1>
+        <p class="mt-4 text-xl text-gray-600">
+            Your personalized journey to a successful future starts here.
+        </p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="w-full max-w-4xl bg-white p-8 rounded-xl shadow-2xl space-y-10">
+
+        <!-- Section 1: Counseling & Registration -->
+        <section id="counseling-section" class="section-container active">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">1. Start Your Career Journey</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                Begin with personalized counseling sessions, available both online and offline. These sessions are designed to help you discover your potential and are chargeable based on your preferences.
+            </p>
+
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Counseling Options:</h3>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="card flex-1 p-5 border border-blue-200">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-2">Online Counseling</h4>
+                        <p class="text-gray-600">Convenient sessions from anywhere. Perfect for busy schedules.</p>
+                        <p class="text-blue-600 font-bold mt-2">Starting from ₹499</p>
+                    </div>
+                    <div class="card flex-1 p-5 border border-green-200">
+                        <h4 class="text-xl font-semibold text-green-700 mb-2">Offline Counseling</h4>
+                        <p class="text-gray-600">Face-to-face interaction for in-depth guidance.</p>
+                        <p class="text-green-600 font-bold mt-2">Starting from ₹799</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Register Now:</h3>
+            <form id="registration-form" class="space-y-5">
+                <div>
+                    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Full Name:</label>
+                    <input type="text" id="name" class="input-field" placeholder="John Doe" required>
+                </div>
+                <div>
+                    <label for="age" class="block text-gray-700 text-sm font-medium mb-2">Age:</label>
+                    <input type="number" id="age" class="input-field" placeholder="16" min="10" max="99" required>
+                </div>
+                <div>
+                    <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Phone Number:</label>
+                    <input type="tel" id="phone" class="input-field" placeholder="9876543210" pattern="[0-9]{10}" required>
+                </div>
+                <div>
+                    <label for="current-class" class="block text-gray-700 text-sm font-medium mb-2">Current Class:</label>
+                    <select id="current-class" class="input-field" required>
+                        <option value="">Select Class</option>
+                        <option value="9">Class 9</option>
+                        <option value="10">Class 10</option>
+                        <option value="passed10">Passed 10th Board</option>
+                        <option value="11">Class 11</option>
+                        <option value="12">Class 12</option>
+                        <option value="passed12">Passed 12th Board</option>
+                        <option value="graduation">Graduation</option>
+                        <option value="post-graduation">Post-Graduation</option>
+                    </select>
+                </div>
+
+                <!-- Subject Marks Section (Conditional) -->
+                <div id="subject-marks-section" class="hidden space-y-4 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Enter Your 10th Board Marks (out of 100):</h4>
+                    <div>
+                        <label for="marks-lang1" class="block text-gray-700 text-sm font-medium mb-2">First Language:</label>
+                        <input type="number" id="marks-lang1" class="input-field" min="0" max="100" placeholder="e.g., 85">
+                    </div>
+                    <div>
+                        <label for="marks-lang2" class="block text-gray-700 text-sm font-medium mb-2">Second Language:</label>
+                        <input type="number" id="marks-lang2" class="input-field" min="0" max="100" placeholder="e.g., 78">
+                    </div>
+                    <div>
+                        <label for="marks-math" class="block text-gray-700 text-sm font-medium mb-2">Math:</label>
+                        <input type="number" id="marks-math" class="input-field" min="0" max="100" placeholder="e.g., 92">
+                    </div>
+                    <div>
+                        <label for="marks-phy-sci" class="block text-gray-700 text-sm font-medium mb-2">Physical Science:</label>
+                        <input type="number" id="marks-phy-sci" class="input-field" min="0" max="100" placeholder="e.g., 88">
+                    </div>
+                    <div>
+                        <label for="marks-life-sci" class="block text-gray-700 text-sm font-medium mb-2">Life Science:</label>
+                        <input type="number" id="marks-life-sci" class="input-field" min="0" max="100" placeholder="e.g., 80">
+                    </div>
+                    <div>
+                        <label for="marks-geo" class="block text-gray-700 text-sm font-medium mb-2">Geography:</label>
+                        <input type="number" id="marks-geo" class="input-field" min="0" max="100" placeholder="e.g., 75">
+                    </div>
+                    <div>
+                        <label for="marks-hist" class="block text-gray-700 text-sm font-medium mb-2">History:</label>
+                        <input type="number" id="marks-hist" class="input-field" min="0" max="100" placeholder="e.g., 70">
+                    </div>
+                </div>
+
+                <!-- Stream Suggestion/Choice -->
+                <div id="stream-choice-section" class="hidden space-y-4 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Choose Your Preferred Stream:</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="stream-choice" value="suggest" class="form-radio text-blue-600">
+                            <span class="text-gray-700">Suggest based on my marks</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="stream-choice" value="willingness" class="form-radio text-blue-600" checked>
+                            <span class="text-gray-700">Choose by my willingness</span>
+                        </label>
+                    </div>
+                    <div id="willingness-stream-select" class="mt-4">
+                        <label for="chosen-stream" class="block text-gray-700 text-sm font-medium mb-2">Select Stream:</label>
+                        <select id="chosen-stream" class="input-field">
+                            <option value="">Select Stream</option>
+                            <option value="science">Science</option>
+                            <option value="arts">Arts</option>
+                            <option value="commerce">Commerce</option>
+                        </select>
+                    </div>
+                    <p id="suggested-stream-display" class="hidden text-lg font-semibold text-green-700 mt-4"></p>
+                </div>
+
+                <button type="submit" class="btn-primary w-full mt-6">Register & Proceed</button>
+            </form>
+            <div id="registration-message" class="hidden mt-4 p-4 rounded-lg text-center text-white bg-green-500"></div>
+        </section>
+
+        <!-- Section 2: Entrance Exams -->
+        <section id="entrance-exams-section" class="section-container hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">2. Explore Entrance Exams</h2>
+            <p class="text-lg text-gray-700 mb-6" id="entrance-intro-text"></p>
+
+            <div id="science-exams" class="stream-exams hidden space-y-6">
+                <h3 class="text-2xl font-semibold text-blue-700 mb-4">Science Stream Entrance Exams:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">NEET-UG</h4>
+                        <p class="text-gray-600 text-sm mt-2">National Eligibility cum Entrance Test (Undergraduate) for admission to MBBS/BDS courses.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">JEE Main</h4>
+                        <p class="text-gray-600 text-sm mt-2">Joint Entrance Examination (Main) for admission to undergraduate engineering programs.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">JEE Advanced</h4>
+                        <p class="text-gray-600 text-sm mt-2">For admission to Indian Institutes of Technology (IITs) after clearing JEE Main.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">ICAR AIEEA</h4>
+                        <p class="text-gray-600 text-sm mt-2">Indian Council of Agricultural Research All India Entrance Examination for Agriculture.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">JENPAS UG</h4>
+                        <p class="text-gray-600 text-sm mt-2">Joint Entrance Test for Nursing, Paramedical, and Allied Sciences Undergraduate Courses (West Bengal).</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">JEXPO</h4>
+                        <p class="text-gray-600 text-sm mt-2">Joint Entrance Examination for Polytechnic (West Bengal) for diploma courses.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">JELET</h4>
+                        <p class="text-gray-600 text-sm mt-2">Joint Entrance Lateral Entry Test (West Bengal) for lateral entry to B.Tech courses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="arts-exams" class="stream-exams hidden space-y-6">
+                <h3 class="text-2xl font-semibold text-purple-700 mb-4">Arts Stream Entrance Exams:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">CLAT</h4>
+                        <p class="text-gray-600 text-sm mt-2">Common Law Admission Test for undergraduate and postgraduate law programs.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">AILET</h4>
+                        <p class="text-gray-600 text-sm mt-2">All India Law Entrance Test for BA-LLB (Hons.), LLM, and PhD programs at NLU Delhi.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">CUET UG (Arts)</h4>
+                        <p class="text-gray-600 text-sm mt-2">Common University Entrance Test for various undergraduate programs in Arts at Central Universities.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">NIFT Entrance Exam</h4>
+                        <p class="text-gray-600 text-sm mt-2">For admission to design, fashion technology, and management programs at NIFT.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">NID DAT</h4>
+                        <p class="text-gray-600 text-sm mt-2">National Institute of Design Design Aptitude Test for various design programs.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">BFA Entrance Exams</h4>
+                        <p class="text-gray-600 text-sm mt-2">Various entrance exams for Bachelor of Fine Arts programs in different universities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="commerce-exams" class="stream-exams hidden space-y-6">
+                <h3 class="text-2xl font-semibold text-orange-700 mb-4">Commerce Stream Entrance Exams:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">CA Foundation</h4>
+                        <p class="text-gray-600 text-sm mt-2">First level of Chartered Accountancy course by ICAI.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">CS Executive Entrance Test (CSEET)</h4>
+                        <p class="text-gray-600 text-sm mt-2">Entrance exam for Company Secretary course by ICSI.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">CMA Entrance Exams</h4>
+                        <p class="text-gray-600 text-sm mt-2">Entrance exams for Cost and Management Accountancy course by ICMAI.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">ACET</h4>
+                        <p class="text-gray-600 text-sm mt-2">Actuarial Common Entrance Test for Actuarial Science courses.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">IPU CET (BBA/B.Com)</h4>
+                        <p class="text-gray-600 text-sm mt-2">Guru Gobind Singh Indraprastha University Common Entrance Test for various undergraduate programs.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="text-xl font-semibold text-gray-800">DU JAT / CUET UG (Commerce)</h4>
+                        <p class="text-gray-600 text-sm mt-2">Delhi University Joint Admission Test (now integrated with CUET) for BBA/BMS programs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Common University Entrance Exams:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">CUET-UG</h4>
+                    <p class="text-gray-600 text-sm mt-2">Common University Entrance Test for admission to various undergraduate programs across Central Universities.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">SAT</h4>
+                    <p class="text-gray-600 text-sm mt-2">Scholastic Assessment Test, widely used for college admissions in the United States and internationally.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">NCHM JEE</h4>
+                    <p class="text-gray-600 text-sm mt-2">National Council for Hotel Management Joint Entrance Examination for hospitality courses.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">JIMI Entrance Exams</h4>
+                    <p class="text-gray-600 text-sm mt-2">Various entrance exams for journalism and mass communication institutes.</p>
+                </div>
+            </div>
+            <button id="next-to-coaching" class="btn-primary w-full mt-8">Next: Best Books & Coaching</button>
+        </section>
+
+        <!-- Section 3: Best Books & Coaching Institutes -->
+        <section id="coaching-section" class="section-container hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">3. Best Books & Coaching Institutes</h2>
+            <p class="text-lg text-gray-700 mb-6" id="coaching-intro-text"></p>
+
+            <div id="coaching-recommendations" class="space-y-6">
+                <!-- Content will be dynamically loaded here based on stream/exams -->
+            </div>
+            <button id="next-to-govt-jobs" class="btn-primary w-full mt-8">Next: Government Job Exams</button>
+        </section>
+
+        <!-- Section 4: Competitive Government Job Exams -->
+        <section id="govt-jobs-section" class="section-container hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">4. Competitive Government Job Exams</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                For those aspiring to a career in the government sector, here are some of the top competitive exams in India, along with probable posts and approximate salaries.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">UPSC Civil Services Exam (CSE)</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> IAS, IPS, IFS, IRS, etc.</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹56,100 - ₹2,50,000+ (per month, varies by post & experience)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">SSC CGL</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> Assistant Audit Officer, Income Tax Inspector, Excise Inspector, ASO, etc.</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹35,400 - ₹1,51,100 (per month, varies by post & grade pay)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">SSC CHSL</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> LDC, JSA, PA, SA, DEO</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹19,900 - ₹81,100 (per month, varies by post & grade pay)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">SSC MTS</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> Multi-Tasking Staff (non-technical)</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹18,000 - ₹56,900 (per month, varies by post & grade pay)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">RRB NTPC</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> Junior Clerk cum Typist, Commercial cum Ticket Clerk, Goods Guard, Station Master, etc.</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹19,900 - ₹35,400 (per month, varies by post)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">RRB Group D</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> Track Maintainer Grade-IV, Helper/Assistant, Hospital Assistant, etc.</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹18,000 (per month, Level 1 of 7th CPC Pay Matrix)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">RRB ALP</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> Assistant Loco Pilot, Technicians</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> ₹19,900 (per month, Level 2 of 7th CPC Pay Matrix)</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">State PCS Exams</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>Posts:</strong> Deputy Collector, DSP, Block Development Officer (State-specific)</p>
+                    <p class="text-gray-600 text-sm"><strong>Approx. Salary:</strong> Varies by state and post, generally similar to UPSC entry-level posts.</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Recommended Coaching for Government Jobs:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">Rice Education</h4>
+                    <p class="text-gray-600 text-sm mt-2">Known for its comprehensive coaching for various government exams, especially in West Bengal.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">Physics Wallah (PW Skills)</h4>
+                    <p class="text-gray-600 text-sm mt-2">Offers online courses for competitive exams beyond engineering/medical, including government jobs.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">Mahendra's Institute</h4>
+                    <p class="text-gray-600 text-sm mt-2">Popular for Bank, SSC, and Railway exam preparation.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-xl font-semibold text-gray-800">Paramount Coaching Centre</h4>
+                    <p class="text-gray-600 text-sm mt-2">Well-regarded for SSC and other government exam coaching.</p>
+                </div>
+            </div>
+            <button id="next-to-discounts" class="btn-primary w-full mt-8">Next: Special Discounts</button>
+        </section>
+
+        <!-- Section 5: Discounts -->
+        <section id="discounts-section" class="section-container hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">5. Exclusive Discounts for You!</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                As a valued user of our platform, you can avail special discounts when enrolling in courses at our partner coaching institutes. Use our unique codes to get reduced subscription fees!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-blue-50 border border-blue-200">
+                    <h4 class="text-xl font-semibold text-blue-700">Allen Career Institute</h4>
+                    <p class="text-gray-600 mt-2">Get <strong>10% off</strong> on JEE/NEET long-term courses.</p>
+                    <p class="text-blue-600 font-bold mt-3">Your Code: <span class="bg-blue-200 px-3 py-1 rounded-md">CAREERGUIDE10A</span></p>
+                </div>
+                <div class="card bg-green-50 border border-green-200">
+                    <h4 class="text-xl font-semibold text-green-700">Aakash Institute</h4>
+                    <p class="text-gray-600 mt-2">Enjoy <strong>12% off</strong> on NEET/JEE foundation programs.</p>
+                    <p class="text-green-600 font-bold mt-3">Your Code: <span class="bg-green-200 px-3 py-1 rounded-md">FUTUREPATH12K</span></p>
+                </div>
+                <div class="card bg-yellow-50 border border-yellow-200">
+                    <h4 class="text-xl font-semibold text-yellow-700">Physics Wallah (PW)</h4>
+                    <p class="text-gray-600 mt-2">Avail <strong>15% off</strong> on all PW Vidyapeeth and online batches.</p>
+                    <p class="text-yellow-600 font-bold mt-3">Your Code: <span class="bg-yellow-200 px-3 py-1 rounded-md">GUIDANCEPW15</span></p>
+                </div>
+                <div class="card bg-red-50 border border-red-200">
+                    <h4 class="text-xl font-semibold text-red-700">Rice Education</h4>
+                    <p class="text-gray-600 mt-2">Flat <strong>8% off</strong> on all government job exam courses.</p>
+                    <p class="text-red-600 font-bold mt-3">Your Code: <span class="bg-red-200 px-3 py-1 rounded-md">RICECAREER8</span></p>
+                </div>
+            </div>
+            <button id="next-to-benefits" class="btn-primary w-full mt-8">Next: Benefits & Contact</button>
+        </section>
+
+        <!-- Section 6: Benefits & Contact Info -->
+        <section id="benefits-section" class="section-container hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">6. Why Choose Our Guidance?</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                Our platform is dedicated to providing comprehensive and personalized career guidance, ensuring you make informed decisions for a bright future.
+            </p>
+
+            <ul class="list-disc list-inside text-lg text-gray-700 space-y-3 mb-8">
+                <li><strong class="text-blue-600">Personalized Counseling:</strong> Tailored advice based on your academic profile and aspirations.</li>
+                <li><strong class="text-blue-600">Extensive Exam Database:</strong> Detailed information on various entrance and competitive exams.</li>
+                <li><strong class="text-blue-600">Top Institute Recommendations:</strong> Curated list of best coaching centers and study materials.</li>
+                <li><strong class="text-blue-600">Exclusive Discounts:</strong> Access to special offers from leading educational institutes.</li>
+                <li><strong class="text-blue-600">Future-Proof Planning:</strong> Guidance for both academic and government job pathways.</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Need Further Assistance?</h3>
+            <div class="card p-6 bg-blue-50 border border-blue-200 text-center">
+                <p class="text-lg text-gray-700 mb-3">Our team is here to help you every step of the way.</p>
+                <p class="text-xl font-bold text-blue-800 mb-2">Helpline: <a href="tel:+919876543210" class="text-blue-600 hover:underline">+91 98765 43210</a></p>
+                <p class="text-xl font-bold text-blue-800">Email: <a href="mailto:support@careerguidance.com" class="text-blue-600 hover:underline">support@careerguidance.com</a></p>
+            </div>
+        </section>
+
+        <!-- Message Box for Alerts -->
+        <div id="message-box" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center hidden z-50">
+            <div class="bg-white p-8 rounded-lg shadow-xl max-w-sm w-full text-center">
+                <p id="message-content" class="text-lg font-semibold text-gray-800 mb-6"></p>
+                <button id="message-close-btn" class="btn-primary">OK</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Function to show custom message box instead of alert()
+        function showMessageBox(message) {
+            document.getElementById('message-content').innerText = message;
+            document.getElementById('message-box').classList.remove('hidden');
+        }
+
+        document.getElementById('message-close-btn').addEventListener('click', function() {
+            document.getElementById('message-box').classList.add('hidden');
+        });
+
+        const counselingSection = document.getElementById('counseling-section');
+        const entranceExamsSection = document.getElementById('entrance-exams-section');
+        const coachingSection = document.getElementById('coaching-section');
+        const govtJobsSection = document.getElementById('govt-jobs-section');
+        const discountsSection = document.getElementById('discounts-section');
+        const benefitsSection = document.getElementById('benefits-section');
+
+        const registrationForm = document.getElementById('registration-form');
+        const currentClassSelect = document.getElementById('current-class');
+        const subjectMarksSection = document.getElementById('subject-marks-section');
+        const streamChoiceSection = document.getElementById('stream-choice-section');
+        const willingnessStreamSelect = document.getElementById('willingness-stream-select');
+        const chosenStreamSelect = document.getElementById('chosen-stream');
+        const suggestedStreamDisplay = document.getElementById('suggested-stream-display');
+        const registrationMessage = document.getElementById('registration-message');
+
+        const scienceExams = document.getElementById('science-exams');
+        const artsExams = document.getElementById('arts-exams');
+        const commerceExams = document.getElementById('commerce-exams');
+        const entranceIntroText = document.getElementById('entrance-intro-text');
+
+        const coachingRecommendations = document.getElementById('coaching-recommendations');
+        const coachingIntroText = document.getElementById('coaching-intro-text');
+
+        let userStream = ''; // To store the user's chosen/suggested stream
+
+        // Function to hide all sections and then show the active one with animation
+        function showSection(sectionToShow) {
+            const allSections = [
+                counselingSection, entranceExamsSection, coachingSection,
+                govtJobsSection, discountsSection, benefitsSection
+            ];
+
+            allSections.forEach(section => {
+                section.classList.remove('active'); // Remove active class first for transition
+                setTimeout(() => {
+                    section.classList.add('hidden');
+                }, 500); // Allow time for fade out transition
+            });
+
+            setTimeout(() => {
+                sectionToShow.classList.remove('hidden');
+                setTimeout(() => {
+                    sectionToShow.classList.add('active'); // Add active class to trigger fade in
+                }, 50); // Small delay to ensure display:block is applied before transition
+            }, 500); // Wait for previous sections to hide
+        }
+
+        // Event listener for Current Class dropdown to show/hide subject marks and stream choice
+        currentClassSelect.addEventListener('change', function() {
+            if (this.value === 'passed10') {
+                subjectMarksSection.classList.remove('hidden');
+                streamChoiceSection.classList.remove('hidden');
+                // Make subject mark inputs required when visible
+                subjectMarksSection.querySelectorAll('input').forEach(input => input.setAttribute('required', 'true'));
+                chosenStreamSelect.setAttribute('required', 'true');
+            } else {
+                subjectMarksSection.classList.add('hidden');
+                streamChoiceSection.classList.add('hidden');
+                // Remove required attribute when hidden
+                subjectMarksSection.querySelectorAll('input').forEach(input => input.removeAttribute('required'));
+                chosenStreamSelect.removeAttribute('required');
+                // Reset stream choice radios
+                document.querySelector('input[name="stream-choice"][value="willingness"]').checked = true;
+                willingnessStreamSelect.classList.remove('hidden');
+                suggestedStreamDisplay.classList.add('hidden');
+            }
+        });
+
+        // Event listener for stream choice radio buttons
+        document.querySelectorAll('input[name="stream-choice"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'suggest') {
+                    willingnessStreamSelect.classList.add('hidden');
+                    suggestedStreamDisplay.classList.remove('hidden');
+                    suggestStreamBasedOnMarks();
+                } else {
+                    willingnessStreamSelect.classList.remove('hidden');
+                    suggestedStreamDisplay.classList.add('hidden');
+                    chosenStreamSelect.value = ''; // Clear previous suggestion
+                }
+            });
+        });
+
+        // Function to suggest stream based on marks (simplified logic for demonstration)
+        function suggestStreamBasedOnMarks() {
+            const math = parseInt(document.getElementById('marks-math').value) || 0;
+            const phySci = parseInt(document.getElementById('marks-phy-sci').value) || 0;
+            const lifeSci = parseInt(document.getElementById('marks-life-sci').value) || 0;
+            const hist = parseInt(document.getElementById('marks-hist').value) || 0;
+            const geo = parseInt(document.getElementById('marks-geo').value) || 0;
+
+            let suggestion = 'Arts'; // Default suggestion
+
+            if (math >= 70 && phySci >= 70 && lifeSci >= 70) {
+                suggestion = 'Science';
+            } else if (math >= 60 && (hist >= 60 || geo >= 60)) {
+                suggestion = 'Commerce';
+            }
+            // If none of the above, it remains Arts
+
+            suggestedStreamDisplay.innerText = `Suggested Stream: ${suggestion}`;
+            userStream = suggestion.toLowerCase(); // Store the suggested stream
+        }
+
+        // Registration Form Submission
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const currentClass = currentClassSelect.value;
+
+            if (currentClass === 'passed10') {
+                const streamChoice = document.querySelector('input[name="stream-choice"]:checked').value;
+                if (streamChoice === 'willingness') {
+                    userStream = chosenStreamSelect.value;
+                    if (!userStream) {
+                        showMessageBox("Please select your preferred stream.");
+                        return;
+                    }
+                } else {
+                    // Stream is already suggested by suggestStreamBasedOnMarks()
+                    if (!userStream) { // Fallback if suggestion didn't run or failed
+                        showMessageBox("Could not suggest a stream. Please choose one manually.");
+                        return;
+                    }
+                }
+            } else if (currentClass === 'passed12' || currentClass === 'graduation' || currentClass === 'post-graduation') {
+                // For higher classes, we can assume they have a general stream or are looking for competitive exams
+                // For simplicity, we'll ask them to select a stream if they haven't already.
+                // Or, we can directly move them to competitive exams section.
+                // For now, let's just proceed.
+                userStream = 'general'; // A general category for higher education
+            } else {
+                // For classes 9, 10, 11, 12, we can skip stream selection for now or prompt them later.
+                // For this example, we'll just proceed to the next section without a specific stream.
+                userStream = ''; // No specific stream for these classes yet
+            }
+
+            registrationMessage.classList.remove('hidden', 'bg-red-500');
+            registrationMessage.classList.add('bg-green-500');
+            registrationMessage.innerText = `Registration successful! Welcome, ${name}.`;
+
+            // Hide registration message after a delay and show next section
+            setTimeout(() => {
+                registrationMessage.classList.add('hidden');
+                displayEntranceExams();
+            }, 1500);
+        });
+
+        // Function to display entrance exams based on the chosen stream
+        function displayEntranceExams() {
+            // Hide all stream-specific exam sections first
+            scienceExams.classList.add('hidden');
+            artsExams.classList.add('hidden');
+            commerceExams.classList.add('hidden');
+
+            // Set introductory text
+            entranceIntroText.innerText = `Based on your profile, here are some key entrance exams for the ${userStream || 'various'} stream:`;
+
+            // Show relevant exam section
+            if (userStream === 'science') {
+                scienceExams.classList.remove('hidden');
+            } else if (userStream === 'arts') {
+                artsExams.classList.remove('hidden');
+            } else if (userStream === 'commerce') {
+                commerceExams.classList.remove('hidden');
+            } else {
+                // If no specific stream or for higher classes, show a general message
+                entranceIntroText.innerText = "Here are some important entrance exams across various streams and for general university admissions:";
+                scienceExams.classList.remove('hidden'); // Show all for broader view if stream not specific
+                artsExams.classList.remove('hidden');
+                commerceExams.classList.remove('hidden');
+            }
+
+            showSection(entranceExamsSection);
+        }
+
+        // Function to display coaching recommendations
+        function displayCoachingRecommendations() {
+            coachingRecommendations.innerHTML = ''; // Clear previous content
+            coachingIntroText.innerText = `Based on your chosen stream (${userStream || 'your general interest'}), here are some highly recommended books and coaching institutes:`;
+
+            let recommendations = [];
+
+            if (userStream === 'science') {
+                recommendations = [
+                    { type: 'Coaching', name: 'Allen Career Institute', description: 'Premier coaching for JEE & NEET. Known for rigorous curriculum and experienced faculty.' },
+                    { type: 'Coaching', name: 'Aakash Institute', description: 'Leading institute for NEET & JEE preparation with extensive study material.' },
+                    { type: 'Coaching', name: 'Physics Wallah (PW)', description: 'Popular for affordable and high-quality online JEE/NEET coaching.' },
+                    { type: 'Books', name: 'Concepts of Physics by H.C. Verma', description: 'Essential for JEE/NEET Physics.' },
+                    { type: 'Books', name: 'Objective Biology by Dinesh', description: 'Comprehensive guide for NEET Biology.' },
+                    { type: 'Books', name: 'NCERT Textbooks', description: 'Foundation for all science subjects.' }
+                ];
+            } else if (userStream === 'arts') {
+                recommendations = [
+                    { type: 'Coaching', name: 'LegalEdge Tutorials', description: 'Specialized coaching for CLAT and other law entrance exams.' },
+                    { type: 'Coaching', name: 'IMS Learning Resources', description: 'Offers coaching for CLAT, AILET, NIFT, NID, and other aptitude-based exams.' },
+                    { type: 'Books', name: 'Lucent\'s General Knowledge', description: 'Good for general awareness sections in various exams.' },
+                    { type: 'Books', name: 'Word Power Made Easy by Norman Lewis', description: 'Excellent for improving English vocabulary and comprehension.' }
+                ];
+            } else if (userStream === 'commerce') {
+                recommendations = [
+                    { type: 'Coaching', name: 'Aldine CA', description: 'Renowned for CA Foundation, Intermediate, and Final preparation.' },
+                    { type: 'Coaching', name: 'Edu91', description: 'Online platform for CA, CS, and CMA courses.' },
+                    { type: 'Books', name: 'P.C. Tulsian for Accountancy', description: 'Widely used for Commerce fundamentals.' },
+                    { type: 'Books', name: 'Taxmann publications', description: 'Reliable for tax and corporate law studies.' }
+                ];
+            } else {
+                // General recommendations if stream is not specific or for higher classes
+                recommendations = [
+                    { type: 'Coaching', name: 'Career Launcher', description: 'Offers coaching for various undergraduate entrances like CUET, BBA, Law, etc.' },
+                    { type: 'Coaching', name: 'BYJU\'S', description: 'Online learning platform with courses for many competitive exams.' },
+                    { type: 'Books', name: 'Quantitative Aptitude for Competitive Examinations by R.S. Aggarwal', description: 'Essential for aptitude sections.' },
+                    { type: 'Books', name: 'Objective General English by S.P. Bakshi', description: 'Comprehensive for English language sections.' }
+                ];
+            }
+
+            recommendations.forEach(rec => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <h4 class="text-xl font-semibold text-gray-800">${rec.name}</h4>
+                    <p class="text-gray-600 text-sm mt-2"><strong>${rec.type}:</strong> ${rec.description}</p>
+                `;
+                coachingRecommendations.appendChild(card);
+            });
+
+            showSection(coachingSection);
+        }
+
+        // Navigation buttons
+        document.getElementById('next-to-coaching').addEventListener('click', displayCoachingRecommendations);
+        document.getElementById('next-to-govt-jobs').addEventListener('click', () => showSection(govtJobsSection));
+        document.getElementById('next-to-discounts').addEventListener('click', () => showSection(discountsSection));
+        document.getElementById('next-to-benefits').addEventListener('click', () => showSection(benefitsSection));
+
+        // Initial state: Only counseling section is visible
+        showSection(counselingSection);
+    </script>
+</body>
+</html>
